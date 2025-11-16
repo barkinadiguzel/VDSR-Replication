@@ -10,7 +10,7 @@ from src.config import config
 class VDSR(nn.Module):
     def __init__(self):
         super(VDSR, self).__init__()
-        self.padding = ZeroPad2d(pad=config['pad'])  # her conv öncesi pad
+        self.padding = ZeroPad2d(pad=config['pad'])  
         self.conv_first = ConvFirst(in_channels=1, out_channels=config['num_features'])
         self.blocks = nn.ModuleList([
             ConvBlock(in_channels=config['num_features'], out_channels=config['num_features'])
